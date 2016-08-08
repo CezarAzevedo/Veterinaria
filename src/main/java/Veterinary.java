@@ -1,14 +1,39 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.poloit.animal.Animal;
+import com.poloit.database.DataBaseConnector;
 public class Veterinary 
 {
 
 	static ArrayList<Animal> animales = new ArrayList<Animal>();
 	public static void main(String[] args) 
 	{
-		
-		animales.add(new Animal("Tommy", new Species("Perro", new Food("Pro plan")), Condition.HEALTHY, 4));
-		animales.add(new Animal("Roy", new Species("Perro", new Food("Dog chow")), Condition.SICK, 6));
-		animales.add(new Animal("Uri", new Species("Perro", new Food("Royal")), Condition.HEALTHY, 27));
+		String query;
+		DataBaseConnector.openConnection();
+		String cmd;
+		do
+		{
+			cmd = new Scanner(System.in).next();
+			if(cmd.equalsIgnoreCase("CHECK"))
+			{
+				DataBaseConnector.selectionQuery();
+			}
+			else if(cmd.equalsIgnoreCase("ADD"))
+			{
+				System.out.print("ID: ");
+				int id = new Scanner(System.in).nextInt();
+				System.out.print("NAME: ");
+				String name = new Scanner(System.in).next();
+				
+				DataBaseConnector.tableModificationQuery(id, name);
+			}
+			else if(!cmd.equalsIgnoreCase("EXIT"))
+			{
+				System.out.println("Opcion incorrecta");
+			}
+		}while(!cmd.equalsIgnoreCase("EXIT"));
+		DataBaseConnector.closeConnection();
 
 		ShowAll();
 		

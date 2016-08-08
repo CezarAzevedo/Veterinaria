@@ -1,3 +1,4 @@
+package com.poloit.animal;
 
 public class Animal 
 {
@@ -53,8 +54,8 @@ public class Animal
 	
 	public void dinnerTime()
 	{
-		System.out.println(name + " come " + specie.getAlimento() + " a las " + mealTime);
-		System.out.println("Su condicion es: " + condition + "(" + condition.getMedicamento() + ")");
+		System.out.println(name + " eats " + specie.getAlimento() + " at " + mealTime);
+		System.out.println("It's condition is: " + condition + "(" + condition.getMedicamento() + ")");
 	}
 	public void setMealTime(int mealTime)
 	{

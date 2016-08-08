@@ -4,5 +4,13 @@
   <artifactId>Veterinaria</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Veterinaria</name>
-  <description>Primer Proyecto			</description>
+  <description>Primer Proyecto</description>
+  
+  <dependencies>
+ 	 <dependency>
+  	  <groupId>mysql</groupId>
+  	  <artifactId>mysql-connector-java</artifactId>
+  	  <version>6.0.3</version>
+  	</dependency>
+  </dependencies>
 </project>

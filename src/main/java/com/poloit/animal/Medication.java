@@ -1,3 +1,4 @@
+package com.poloit.animal;
 
 public class Medication
 {

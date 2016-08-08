@@ -1,3 +1,4 @@
+package com.poloit.animal;
 public class Species
 {
 	private String name;
@@ -23,9 +24,9 @@ public class Species
 
 	private Food alimento;
 	
-	Species(){}
+	public Species(){}
 
-	Species(String nombre, Food alimento)
+	public Species(String nombre, Food alimento)
 	{
 		setAlimento(alimento);
 		setName(nombre);
